@@ -1,11 +1,13 @@
 package com.nishgtm.torch;
 
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+
 import android.support.v7.app.ActionBarActivity;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.INTERNET;
 import android.widget.Toast;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -41,10 +43,6 @@ public class MainActivity extends ActionBarActivity {
 					this.cam.setParameters(p);
 					this.cam.startPreview();
 				}else{
-					//Camera cam = Camera.open();
-					//Camera.Parameters p=cam.getParameters();
-					//p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-					//Camera cam=Camera.open();
 					this.cam.stopPreview();
 					this.cam.release();
 				}
@@ -56,16 +54,11 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
