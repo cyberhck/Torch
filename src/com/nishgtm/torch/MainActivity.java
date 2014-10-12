@@ -5,6 +5,8 @@ import android.hardware.Camera;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.INTERNET;
+import android.widget.Toast;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
@@ -16,6 +18,14 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+			try{
+			AdView av=(AdView)findViewById(R.id.adView);
+			AdRequest ar=new AdRequest.Builder().build();
+			av.loadAd(ar);
+		}catch (Exception e){
+			Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+		}
+
         final Switch btn=(Switch) findViewById(R.id.switch1);
         
         btn.setOnCheckedChangeListener(new OnCheckedChangeListener() {

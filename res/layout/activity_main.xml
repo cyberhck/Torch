@@ -17,5 +17,15 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/Switch" />
+		<com.google.android.gms.ads.AdView
+	    android:id="@+id/adView"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentEnd="true"
+	    ads:adSize="BANNER"
+	    ads:adUnitId="@string/adId" >
+	</com.google.android.gms.ads.AdView>
 
 </RelativeLayout>
