@@ -35,7 +35,6 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				
 				if(arg1){
 					this.cam= Camera.open();
 					Camera.Parameters p=this.cam.getParameters();
@@ -43,7 +42,9 @@ public class MainActivity extends ActionBarActivity {
 					this.cam.setParameters(p);
 					this.cam.startPreview();
 				}else{
-					this.cam.stopPreview();
+					Camera.Parameters p=this.cam.getParameters();
+					p.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+					this.cam.setParameters(p);
 					this.cam.release();
 				}
 				
