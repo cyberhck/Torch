@@ -2,7 +2,6 @@ package com.nishgtm.torch;
 
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.AdRequest;
-
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Notification;
@@ -24,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    	//TODO New Ad key
+    	//NO ads in this application ever
         super.onCreate(savedInstanceState);
         Context context=getApplicationContext();
         RemoteViews rv=new RemoteViews(getPackageName(),R.layout.item_notification);
@@ -35,13 +34,6 @@ public class MainActivity extends ActionBarActivity {
 		NotificationManager nm=(NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 		nm.notify(1,notification.build());
         setContentView(R.layout.activity_main);
-			try{
-			AdView av=(AdView)findViewById(R.id.adView);
-			AdRequest ar=new AdRequest.Builder().build();
-			av.loadAd(ar);
-		}catch (Exception e){
-			Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
-		}
 
         final Switch btn=(Switch) findViewById(R.id.switch1);
         
